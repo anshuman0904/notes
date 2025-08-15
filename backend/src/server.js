@@ -9,14 +9,14 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 5001;
 
-connectDB();
-
 //middleware
 app.use(express.json());
 app.use(rateLimiter);
 
 app.use("/api/notes", notesRoutes);
 
-app.listen(port, () => {
-    console.log("Server started at port: ", port);
+connectDB().then(() => {
+    app.listen(port, () => {
+        console.log("Server started at port: ", port);
+    });
 });
