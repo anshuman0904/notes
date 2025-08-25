@@ -13,7 +13,7 @@ const port = process.env.PORT || 5001;
 
 //middleware
 app.use(cors({
-    origin: "https://verbose-meme-rq94776g46g255q-5173.app.github.dev"
+    origin: "http://localhost:5173"
 }));
 app.use(express.json());
 app.use(rateLimiter);
