@@ -11,7 +11,7 @@ dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 5001;
-const host = process.env.HOST || "localhost";
+// const host = process.env.HOST || "localhost";
 const __dirname = path.resolve();
 
 //middleware
@@ -35,7 +35,7 @@ if (process.env.NODE_ENV === "production")
 }
 
 connectDB().then(() => {
-    app.listen(port, host, () => {
+    app.listen(port, () => {
         console.log("Server started at port: ", port);
     });
 });
